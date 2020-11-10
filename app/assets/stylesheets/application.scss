@@ -15,3 +15,11 @@
  */
 
  @import "bulma";
+
+ .navbar-brand .title {
+   color: white;
+ }
+
+ .notification:not(:last-child) {
+   margin-bottom: 0;
+ }

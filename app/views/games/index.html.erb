@@ -1,25 +1,9 @@
-<p id="notice"><%= notice %></p>
+<h1 class="title">
+  <i class="fa fa-book"></i> Recently completed
+</h1>
 
-<h1>Games</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @games.each do |game| %>
-      <tr>
-        <td><%= link_to 'Show', game %></td>
-        <td><%= link_to 'Edit', edit_game_path(game) %></td>
-        <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Game', new_game_path %>
+<section class="section">
+  <div class="game-grid">
+    <%= render @games %>
+  </div>
+</section>
