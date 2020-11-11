@@ -1,14 +1,23 @@
 <div class="section">
   <div class="columns">
+    <div class="column is-4">
+      <%= image_tag @game.thumbnail.variant(resize: "320x495"), alt: "#{@game.title}" %>
+    </div>
+    
     <div class="column">
+      <h1 class="title is-2"><%= @game.title %><h1>
+
+      <div class="content">
+        <p><strong>Details:</strong></p>
+        <%= @game.additional_info %>
+      </div>
+
+      <%= link_to 'Edit', edit_game_path(@game) %> |
+      <%= link_to 'Back', games_path %>
+
     </div>
   </div>
 </div>
 
-<h1><%= @game.title %></h1>
-<p><%= @game.additional_info %><p>
 
-<%= image_tag(@game.thumbnail) %>
 
-<%= link_to 'Edit', edit_game_path(@game) %> |
-<%= link_to 'Back', games_path %>
