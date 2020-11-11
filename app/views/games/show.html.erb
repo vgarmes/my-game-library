@@ -1,6 +1,14 @@
-<p id="notice"><%= notice %></p>
+<div class="section">
+  <div class="columns">
+    <div class="column">
+    </div>
+  </div>
+</div>
 
-<%= render 'form', game: @game %>
+<h1><%= @game.title %></h1>
+<p><%= @game.additional_info %><p>
+
+<%= image_tag(@game.thumbnail) %>
 
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>

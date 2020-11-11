@@ -1,6 +1,15 @@
-<h1>Editing Game</h1>
+<div class="section">
+  <div class="container">
+    <div class="columns is-centered">
 
-<%= render 'form', game: @game %>
+      <div class="column is-4">
+        <h2 class="title is-2">Edit Game</h2>
 
-<%= link_to 'Show', @game %> |
-<%= link_to 'Back', games_path %>
+        <%= render 'form', game: @game %>
+
+        <%= link_to 'Show', @game %> |
+        <%= link_to 'Back', games_path %>
+      </div>
+    </div>
+  </div>
+</div>
