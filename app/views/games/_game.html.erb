@@ -1,7 +1,3 @@
-<ul>
-  <% @games.each do |game| %>
-    <li>
-      <%= link_to game.title, game_path(game) %>
-    </li>
-  <% end %>
-</ul>
+<div class="game">
+  <%= link_to image_tag(game.thumbnail), game %>
+</div>
