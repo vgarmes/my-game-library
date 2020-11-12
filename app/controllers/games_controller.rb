@@ -21,6 +21,7 @@ class GamesController < ApplicationController
   # GET /games/1/edit
   def edit
     @game = Game.find(params[:id])
+    @platforms = Platform.all
   end
 
   # POST /games
@@ -78,6 +79,7 @@ class GamesController < ApplicationController
         :buy_date,
         :completed,
         :completed_date,
-        :thumbnail)
+        :thumbnail,
+        :platform_id)
     end
 end

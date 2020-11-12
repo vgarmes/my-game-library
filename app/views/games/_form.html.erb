@@ -18,7 +18,7 @@
 <div class="field">
 
   <% if @game.thumbnail.attached? %>
-    <%= image_tag @game.thumbnail.variant(resize: "100x100"), alt: "#{@game.title}" %>
+  <%= image_tag @game.thumbnail.variant(resize: "100x100"), alt: "#{@game.title}" %>
   <% end %>
 
   <div class="control">
@@ -35,9 +35,9 @@
         </span>
         <span class="file-name">
           <% if @game.thumbnail.attached? %>
-            <%= @game.thumbnail.filename %>
+          <%= @game.thumbnail.filename %>
           <% else %>
-            No picture uploaded
+          No picture uploaded
           <% end %>
         </span>
       </label>
@@ -84,12 +84,20 @@
   </div>
 </div>
 
-
-
-
-
-
-
+<div class="field">
+  <div class="control">
+    <label class="label">Platform</label>
+    <div class="control has-icons-left">
+      <span class="select">
+        <%= f.input_field :platform_id, collection: @platforms, prompt: "Select platform" %>
+      </span>
+      <span class="icon is-small is-left">
+        <i class="fa fa-gamepad"></i>
+      </span>
+    </div>
+  </div>
+</div>
 
 <%= f.button :submit, class:"button is-dark" %>
+
 <% end %>
