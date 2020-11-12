@@ -1,9 +1,11 @@
-<h1 class="title">
-  <i class="fa fa-book"></i> Recently completed
-</h1>
+<div id="content">
+  <h4 class="title is-4">
+    <i class="fa fa-clock-o"></i> Recently completed
+  </h4>
 
-<section class="section">
-  <div class="game-grid">
-    <%= render @games %>
+  <div class="game-list">
+    <ul>
+      <%= render @games %>
+    </ul>
   </div>
-</section>
+</div>

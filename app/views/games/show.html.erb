@@ -1,11 +1,13 @@
 <div class="section">
   <div class="columns">
     <div class="column is-4">
-      <%= image_tag @game.thumbnail.variant(resize: "320x495"), alt: "#{@game.title}" %>
+      <% if @game.thumbnail.attached? %>
+        <%= image_tag @game.thumbnail.variant(resize: "400x400"), alt: "#{@game.title}" %>
+      <% end %>
     </div>
     
     <div class="column">
-      <h1 class="title is-2"><%= @game.title %><h1>
+      <h3 class="title is-3"><%= @game.title %><h3>
 
       <div class="content">
         <p><strong>Details:</strong></p>
