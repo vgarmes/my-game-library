@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_11_090732) do
+ActiveRecord::Schema.define(version: 2020_11_12_163705) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -46,7 +46,16 @@ ActiveRecord::Schema.define(version: 2020_11_11_090732) do
     t.integer "developer_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "platform_id"
+    t.index ["platform_id"], name: "index_games_on_platform_id"
+  end
+
+  create_table "platforms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "games", "platforms"
 end
