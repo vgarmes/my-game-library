@@ -14,30 +14,28 @@
  *= require_self
  */
 
- @import "bulma";
+@import "bulma";
 
- .navbar-brand .title {
-   color: white;
- }
+.navbar-brand .title {
+  color: white;
+}
 
- .notification:not(:last-child) {
-   margin-bottom: 0;
- }
+.notification:not(:last-child) {
+  margin-bottom: 0;
+}
 
- @media only screen and (max-width: 1217px) {
+/*@media only screen and (max-width: 1217px) {
   #content {
     width: auto;
   }
   .game-list li {
     width: 20%;
-    margin: 4px 0;
-    //margin: 0;
-    padding: 6px 0;
-    //padding: 0;
+    margin: 0;
+    padding: 0;
   }
-}
+}*/
 
-@media only screen and (max-width: 817px) {
+@media only screen and (max-width: 849px) {
   .game-list li{
 		width:50%;
   }
