@@ -80,6 +80,7 @@ class GamesController < ApplicationController
         :completed,
         :completed_date,
         :thumbnail,
-        :platform_id)
+        :platform_id,
+        :rating)
     end
 end
