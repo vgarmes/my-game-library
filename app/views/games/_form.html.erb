@@ -11,6 +11,20 @@
 
 <div class="field">
   <div class="control">
+    <label class="label">Platform</label>
+    <div class="control has-icons-left">
+      <span class="select">
+        <%= f.input_field :platform_id, collection: @platforms, prompt: "Select platform" %>
+      </span>
+      <span class="icon is-small is-left">
+        <i class="fa fa-gamepad"></i>
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="field">
+  <div class="control">
     <%= f.input :additional_info, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
   </div>
 </div>
@@ -81,20 +95,6 @@
   <div class="control">
     <%= f.label :completed_date %><br />
     <%= f.date_select :completed_date, order: [:day, :month, :year] %>
-  </div>
-</div>
-
-<div class="field">
-  <div class="control">
-    <label class="label">Platform</label>
-    <div class="control has-icons-left">
-      <span class="select">
-        <%= f.input_field :platform_id, collection: @platforms, prompt: "Select platform" %>
-      </span>
-      <span class="icon is-small is-left">
-        <i class="fa fa-gamepad"></i>
-      </span>
-    </div>
   </div>
 </div>
 

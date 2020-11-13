@@ -63,3 +63,11 @@ li:hover .cover img{animation:flotar 2.5s infinite;}
 	75%{transform:rotate(2deg) translateY(2px) translateX(4px)}
 	100%{transform:rotate(0deg) translateY(0px) translateX(0px)}
 }
+
+.item-title {
+  display: block;
+  font-weight: bold;
+  font-size: 85%;
+  margin: 10px 0;
+  //margin-bottom: 10px;
+}
