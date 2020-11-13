@@ -46,18 +46,19 @@ $(document).ready(function () {
 
 function setInitialStars() {
   var onStar = $("#rating_value").val();
-  var selectedStar = $(`#stars li[data-value='${onStar}']`);
-  // alternatively: var selectedStar = document.body.querySelector(`#stars li[data-value="${onStar}"]`);
+  if (onStar) {
+    var selectedStar = $(`#stars li[data-value='${onStar}']`);
+    // alternatively: var selectedStar = document.body.querySelector(`#stars li[data-value="${onStar}"]`);
 
-  var stars = $(selectedStar).parent().children('li.star');
+    var stars = $(selectedStar).parent().children('li.star');
 
-  for (i = 0; i < stars.length; i++) {
-    $(stars[i]).removeClass('selected');
+    for (i = 0; i < stars.length; i++) {
+      $(stars[i]).removeClass('selected');
+    }
+
+    for (i = 0; i < onStar; i++) {
+      $(stars[i]).addClass('selected');
+    }
   }
-
-  for (i = 0; i < onStar; i++) {
-    $(stars[i]).addClass('selected');
-  }
-
 }
 

@@ -2,109 +2,133 @@
 <%= f.error_notification %>
 <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
+<div class="columns">
+  <div class="column is-half">
 
-<div class="field">
-  <div class="control">
-    <%= f.input :title, required: true, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+    <div class="field">
+      <div class="control">
+        <%= f.input :title, required: true, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="control">
+        <label class="label">Platform</label>
+        <div class="control has-icons-left">
+          <span class="select">
+            <%= f.input_field :platform_id, collection: @platforms, prompt: "Select platform" %>
+          </span>
+          <span class="icon is-small is-left">
+            <i class="fa fa-gamepad"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="field pb-3">
+      <div class="control">
+        <%= f.input :additional_info, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+      </div>
+    </div>
+
+    <div class="field pb-3">
+      <div class="control">
+        <%= f.label :release_date %><br />
+        <%= f.date_select :release_date, order: [:day, :month, :year] %>
+      </div>
+    </div>
+
+    <div class="columns pb-3">
+      <div class="column">
+        <div class="field">
+          <div class="control">
+            <label for="game[in_collection]">
+              <%= f.input :in_collection, required: false, input_html: { class: "checkbox"}, wrapper: false, label: false %>
+              In collection?
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="field">
+          <div class="control">
+            <%= f.label :buy_date %><br />
+            <%= f.date_select :buy_date, order: [:day, :month, :year] %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns pb-3">
+      <div class="column">
+        <div class="field">
+          <div class="control">
+            <label for="game[completed]">
+              <%= f.input :completed, required: false, input_html: { class: "checkbox"}, wrapper: false, label: false %>
+              Completed?
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="field">
+          <div class="control">
+            <%= f.label :completed_date %><br />
+            <%= f.date_select :completed_date, order: [:day, :month, :year] %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns">
+      <div class="field column">
+        <div class="control">
+          <%= f.input :rating, input_html: { class: "input", id: "rating_value", type: "hidden", value: (@game.rating unless @game.rating.nil?) }, wrapper: false, label_html: { class: "label" } %>
+          <%= render 'rating_widget', game: @game %>
+        </div>
+      </div>
+    </div>
+
+
   </div>
-</div>
 
-<div class="field">
-  <div class="control">
-    <label class="label">Platform</label>
-    <div class="control has-icons-left">
-      <span class="select">
-        <%= f.input_field :platform_id, collection: @platforms, prompt: "Select platform" %>
-      </span>
-      <span class="icon is-small is-left">
-        <i class="fa fa-gamepad"></i>
-      </span>
+  <div class="column">
+
+    <% if @game.thumbnail.attached? %>
+    <%= image_tag @game.thumbnail.variant(resize: "200x200"), alt: "#{@game.title}" %>
+    <% end %>
+
+    <div class="field">
+      <div class="control">
+        <div class="file has-name is-fullwidth">
+          <label class="file-label">
+            <%= f.input :thumbnail, as: :file, required: true, input_html: { class: "file-input" }, wrapper: false, label: false  %>
+            <span class="file-cta">
+              <span class="file-icon">
+                <i class="fa fa-upload"></i>
+              </span>
+              <span class="file-label">
+                Choose a thumbnail...
+              </span>
+            </span>
+            <span class="file-name">
+              <% if @game.thumbnail.attached? %>
+              <%= @game.thumbnail.filename %>
+              <% else %>
+              No picture uploaded
+              <% end %>
+            </span>
+          </label>
+        </div>
+      </div>
     </div>
   </div>
+
 </div>
 
-<div class="field">
-  <div class="control">
-    <%= f.input :additional_info, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
-  </div>
-</div>
-
-<div class="field">
-
-  <% if @game.thumbnail.attached? %>
-  <%= image_tag @game.thumbnail.variant(resize: "100x100"), alt: "#{@game.title}" %>
-  <% end %>
-
-  <div class="control">
-    <div class="file has-name is-fullwidth">
-      <label class="file-label">
-        <%= f.input :thumbnail, as: :file, required: true, input_html: { class: "file-input" }, wrapper: false, label: false  %>
-        <span class="file-cta">
-          <span class="file-icon">
-            <i class="fa fa-upload"></i>
-          </span>
-          <span class="file-label">
-            Choose a thumbnail...
-          </span>
-        </span>
-        <span class="file-name">
-          <% if @game.thumbnail.attached? %>
-          <%= @game.thumbnail.filename %>
-          <% else %>
-          No picture uploaded
-          <% end %>
-        </span>
-      </label>
-    </div>
-  </div>
-</div>
-
-<div class="field">
-  <div class="control">
-    <%= f.label :release_date %><br />
-    <%= f.date_select :release_date, order: [:day, :month, :year] %>
-  </div>
-</div>
-
-<div class="field">
-  <div class="control">
-    <label for="game[in_collection]">
-      <%= f.input :in_collection, required: false, input_html: { class: "checkbox"}, wrapper: false, label: false %>
-      In collection?
-    </label>
-  </div>
-</div>
-
-<div class="field">
-  <div class="control">
-    <%= f.label :buy_date %><br />
-    <%= f.date_select :buy_date, order: [:day, :month, :year] %>
-  </div>
-</div>
-
-<div class="field">
-  <div class="control">
-    <label for="game[completed]">
-      <%= f.input :completed, required: false, input_html: { class: "checkbox"}, wrapper: false, label: false %>
-      Completed?
-    </label>
-  </div>
-</div>
-
-<div class="field">
-  <div class="control">
-    <%= f.label :completed_date %><br />
-    <%= f.date_select :completed_date, order: [:day, :month, :year] %>
-  </div>
-</div>
-
-<div class="field">
-  <div class="control">
-    <%= f.input :rating, input_html: { class: "input", id: "rating_value", type: "hidden", value: (@game.rating unless @game.rating.nil?) }, wrapper: false, label_html: { class: "label" } %>
-  </div>
-</div>
-<%= render 'rating_widget', game: @game %>
-
+<hr />
 
 <%= f.button :submit, class:"button is-dark" %>
 
