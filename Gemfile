@@ -36,6 +36,8 @@ gem 'simple_form', '~> 5.0', '>= 5.0.3'
 gem 'devise', '~> 4.7', '>= 4.7.3'
 gem 'mini_magick', '~> 4.11'
 gem 'image_processing', '~> 1.12', '>= 1.12.1'
+# Use Cloudinary as cloud storage service for Active Storage
+gem 'cloudinary'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

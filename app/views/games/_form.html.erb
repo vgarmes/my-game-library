@@ -97,33 +97,17 @@
   <div class="column">
 
     <% if @game.thumbnail.attached? %>
-    <%= image_tag @game.thumbnail.variant(resize: "200x200"), alt: "#{@game.title}" %>
+      <%= url_for(@game.thumbnail) %>
+    <!--<%= image_tag @game.thumbnail.variant(resize: "200x200"), alt: "#{@game.title}" %>-->
     <% end %>
 
     <div class="field">
       <div class="control">
-        <div class="file has-name is-fullwidth">
-          <label class="file-label">
-            <%= f.input :thumbnail, as: :file, required: true, input_html: { class: "file-input" }, wrapper: false, label: false  %>
-            <span class="file-cta">
-              <span class="file-icon">
-                <i class="fa fa-upload"></i>
-              </span>
-              <span class="file-label">
-                Choose a thumbnail...
-              </span>
-            </span>
-            <span class="file-name">
-              <% if @game.thumbnail.attached? %>
-              <%= @game.thumbnail.filename %>
-              <% else %>
-              No picture uploaded
-              <% end %>
-            </span>
-          </label>
-        </div>
+        <%= f.file_field :thumbnail, class: 'form-control', direct_upload: true %>
       </div>
     </div>
+    
+    
   </div>
 
 </div>

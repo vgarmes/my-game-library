@@ -2,7 +2,7 @@ class RegistrationsController < Devise::RegistrationsController
   
   # only admin can create new users:
   before_action :authenticate_user!, :redirect_unless_admin, only: [:new, :create]
-  # when admin tries to sign up a new user, Devise will throw the error "User already logged in"
+  # when admin tries to sign up a new user, Devise will throw the error "User already logged in", to avoid it:
   skip_before_action :require_no_authentication
 
   private
