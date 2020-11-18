@@ -6,4 +6,9 @@
     <% end %>
   </div>
   <span class="item-title"><%= game.title %></span>
+  <div class="icons">
+    <div class="rating">
+      <%= render 'rating_static', rating: game.rating.to_i %>
+    </div>
+  </div>
 </li>

@@ -20,7 +20,8 @@
   list-style: none;
 }
 
-.game-list li {
+//.game-list li {
+.game-list #item {
   position: relative;
   width: 20%;
   //width: 175px
@@ -68,6 +69,10 @@ li:hover .cover img{animation:flotar 2.5s infinite;}
   display: block;
   font-weight: bold;
   font-size: 85%;
-  margin: 10px 0;
+  margin: 10px 0 0 0;
   //margin-bottom: 10px;
+}
+
+.rating {
+  
 }
