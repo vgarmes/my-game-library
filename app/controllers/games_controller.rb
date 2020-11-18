@@ -4,7 +4,7 @@ class GamesController < ApplicationController
   # GET /games
   # GET /games.json
   def index
-    @games = Game.all
+    @games = Game.order(completed_date: :desc).limit(20)
   end
 
   # GET /games/1
