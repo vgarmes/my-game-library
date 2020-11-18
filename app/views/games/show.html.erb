@@ -1,25 +1,24 @@
 <div class="section">
   <div class="columns">
     <div class="column is-4">
-      <% if @game.thumbnail.attached? %>
-        <%= image_tag @game.thumbnail.variant(resize: "400x400"), alt: "#{@game.title}" %>
-      <% end %>
+      <div class="cover">
+        <% if @game.thumbnail.attached? %>
+        <%= image_tag @game.thumbnail, alt: "#{@game.title}" %>
+        <% end %>
+      </div>
     </div>
-    
+
     <div class="column">
       <h3 class="title is-3"><%= @game.title %><h3>
 
-      <div class="content">
-        <p><strong>Details:</strong></p>
-        <%= @game.additional_info %>
-      </div>
+          <div class="content">
+            <p><strong>Details:</strong></p>
+            <%= @game.additional_info %>
+          </div>
 
-      <%= link_to 'Edit', edit_game_path(@game) %> |
-      <%= link_to 'Back', games_path %>
+          <%= link_to 'Edit', edit_game_path(@game) %> |
+          <%= link_to 'Back', games_path %>
 
     </div>
   </div>
 </div>
-
-
-

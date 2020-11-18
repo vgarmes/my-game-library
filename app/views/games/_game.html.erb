@@ -2,7 +2,7 @@
   <div class="cover">
     <span class="item-cover"></span>
     <% if game.thumbnail.attached? %>
-      <%= link_to image_tag(game.thumbnail.variant(resize: "160x160")), game %>
+      <%= link_to image_tag(game.thumbnail), game %>
     <% end %>
   </div>
   <span class="item-title"><%= game.title %></span>

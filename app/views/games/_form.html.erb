@@ -97,8 +97,7 @@
   <div class="column">
 
     <% if @game.thumbnail.attached? %>
-      <%= url_for(@game.thumbnail) %>
-    <!--<%= image_tag @game.thumbnail.variant(resize: "200x200"), alt: "#{@game.title}" %>-->
+      <%= image_tag @game.thumbnail, alt: "#{@game.title}" %>
     <% end %>
 
     <div class="field">
