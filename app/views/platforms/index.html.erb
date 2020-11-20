@@ -1,10 +1,16 @@
-<h1>All Platforms</h1>
-
-<ul id="platforms">
-  <% @platforms.each do |platform| %>
-    <li>
-      <%= platform.name %>
-    </li>
-  <% end %>
-</ul>
-
+<section class="section">
+  <div class="container">
+    <h1 class="title is-3">All Platforms</h1>
+    <div class="columns is-centered">
+      <div class="column">
+        <ul>
+          <% @platforms.each do |p| %>
+          <li>
+            <%= link_to p.name, platform_path(p) %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
