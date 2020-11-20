@@ -1,0 +1,14 @@
+<section class="section">
+  <div class="container">
+    <h1 class="title is-3">Editing Platform</h1>
+    <%= render 'form', platform: @platform %>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <%= link_to 'Show', @platform %> |
+    <%= link_to 'Back', platforms_path %>
+    <%= link_to 'Delete', @platform, method: :delete, data: { confirm: "Are you sure? "}, class:"button is-small is-rounded" %>
+  </div>
+</section>
