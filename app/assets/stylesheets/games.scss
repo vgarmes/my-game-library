@@ -2,13 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-#content {
+/*#content {
   position: relative;
   margin: 0 auto;
   padding: 20px 0;
   width: auto;
   //width: 960px;
-}
+}*/
 
 .game-list {
   margin: 30px 0 60px;
@@ -52,7 +52,7 @@
 
 .cover img {
   box-shadow: #1e2333 0 0 10px;
-  max-width: 160px;
+  max-width: 120px;
   max-height: 160px;
   vertical-align: middle;
 }
