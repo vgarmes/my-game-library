@@ -35,7 +35,8 @@
   }
 }*/
 
-@media only screen and (max-width: 849px) {
+// bulma mobile breakpoint is 768px
+@media only screen and (max-width: 769px) {
   .game-list #item{
 		width:50%;
   }
