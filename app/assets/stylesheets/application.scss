@@ -41,3 +41,70 @@
 		width:50%;
   }
 }
+
+.surface-add-item {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  
+  //z-index: 30001;
+}
+
+.surface-add-item .add-item-button {
+  margin-bottom: 20px;
+  margin-right: 20px;
+  position: relative;
+}
+.surface-add-item .floating-action-button {
+  width: 56px;
+  height: 56px;
+  padding: 16px;
+  transform-origin: 50% 50%;
+  animation-name: expand-icon;
+  animation-duration: .2s;
+}
+
+.floating-action-button {
+  border-radius: 50px;
+  background-color: #ff4081;
+  color: white;
+  border: none; 
+  box-shadow: 0 3px 3px rgba(0,0,0,0.12), 0px 2px 2px rgba(0,0,0,0.16);
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.surface-add-item i {
+  font-size: 24px;
+  white-space: nowrap;
+}
+
+.floating-action-button:hover {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  background-color: #ff0359;
+}
+
+.floating-action-button:hover .add-item {
+  display: none;
+}
+
+.surface-add-item .create-game {
+  display: none;
+}
+.floating-action-button:hover .create-game {
+  display: block;
+  animation: rotate-icon .2s;
+}
+
+@keyframes expand-icon {
+  0% {transform: scale(0);}
+  100% {transform: scale(1);}
+}
+
+@keyframes rotate-icon {
+  0% {transform: rotate(-90deg);}
+  100% {transform: rotate(0);}
+}

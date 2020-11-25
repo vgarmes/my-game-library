@@ -11,7 +11,7 @@
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" %>
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  
+
 </head>
 
 <body>
@@ -48,17 +48,15 @@
 
       <div class="navbar-end">
         <% if user_signed_in? %>
-          <%= link_to current_user.name, edit_user_registration_path, class:"navbar-item" %>
+        <%= link_to current_user.name, edit_user_registration_path, class:"navbar-item" %>
         <% end %>
         <div class="navbar-item">
           <div class="buttons">
-            <%= link_to 'Add Game', new_game_path, class: "button is-dark is-inverted" %>
-
             <% if user_signed_in? %>
-              <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "button is-info" %>
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "button is-info" %>
             <% else %>
-              <%= link_to 'Sign In', new_user_session_path, class: "button is-info" %>
-              <%= link_to 'Sign Up', new_user_registration_path, class:"button is-info" %>
+            <%= link_to 'Sign In', new_user_session_path, class: "button is-info" %>
+            <%= link_to 'Sign Up', new_user_registration_path, class:"button is-info" %>
             <% end %>
 
           </div>
@@ -69,8 +67,19 @@
 
   <%= yield %>
 
+  <div class="surface-add-item">
+    <div class="add-item-button">
+      <%= link_to new_game_path do %>
+      <button class="floating-action-button" title="Add game">      
+        <i aria-hidden="true" class="add-item fa fa-plus"></i>
+        <i aria-hidden="true" class="create-game fa fa-gamepad"></i>
+      </button>
+      <% end %>
+    </div>
+  </div>
+
   <%= javascript_pack_tag 'burger_navbar' %>
-  
+
 </body>
 
 </html>
