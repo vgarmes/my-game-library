@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_15_215912) do
+ActiveRecord::Schema.define(version: 2020_11_26_083501) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2020_11_15_215912) do
     t.string "title"
     t.boolean "in_collection", default: false
     t.boolean "completed", default: false
-    t.text "additional_info"
+    t.text "edition"
     t.date "release_date"
     t.date "completed_date"
     t.date "buy_date"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 2020_11_15_215912) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "platform_id"
     t.integer "rating"
+    t.text "comment"
     t.index ["platform_id"], name: "index_games_on_platform_id"
   end
 
@@ -58,6 +59,7 @@ ActiveRecord::Schema.define(version: 2020_11_15_215912) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "manufacturer"
   end
 
   create_table "users", force: :cascade do |t|
