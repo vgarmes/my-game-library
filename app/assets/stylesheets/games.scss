@@ -58,6 +58,10 @@
   vertical-align: middle;
 }
 
+.item-cover .monochrome-image-inv {
+  -webkit-filter: invert(100%);
+}
+
 .cover img {
   box-shadow: #1e2333 0 0 10px;
   max-width: 120px;
