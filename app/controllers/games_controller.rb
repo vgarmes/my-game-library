@@ -22,7 +22,7 @@ class GamesController < ApplicationController
   # GET /games/1/edit
   def edit
     @game = Game.find(params[:id])
-    @platforms = Platform.all
+    @platforms = Platform.order(:manufacturer)
   end
 
   # POST /games
@@ -74,7 +74,7 @@ class GamesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def game_params
       params.require(:game).permit(:title,
-        :additional_info,
+        :edition,
         :release_date,
         :in_collection,
         :buy_date,
@@ -82,6 +82,7 @@ class GamesController < ApplicationController
         :completed_date,
         :thumbnail,
         :platform_id,
-        :rating)
+        :rating,
+        :comment)
     end
 end

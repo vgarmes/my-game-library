@@ -35,7 +35,7 @@ class PlatformsController < ApplicationController
 
   def update
     respond_to do |format|
-      if @platform.update(game_params)
+      if @platform.update(platform_params)
         format.html { redirect_to platforms_path, notice: 'Game was successfully updated.' }
         format.json { render :show, status: :ok, location: @platform }
       else
@@ -50,7 +50,7 @@ class PlatformsController < ApplicationController
   def destroy
     @platform.destroy
     respond_to do |format|
-      format.html { redirect_to platforms_path, notice: 'Game was successfully destroyed.' }
+      format.html { redirect_to platforms, notice: 'Game was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -63,6 +63,6 @@ class PlatformsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def platform_params
-      params.require(:platform).permit(:name)
+      params.require(:platform).permit(:name, :manufacturer)
     end
 end
