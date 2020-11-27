@@ -16,7 +16,7 @@ class GamesController < ApplicationController
   # GET /games/new
   def new
     @game = Game.new
-    @platforms = Platform.all
+    @platforms = Platform.order(:manufacturer)
   end
 
   # GET /games/1/edit

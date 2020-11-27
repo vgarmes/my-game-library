@@ -3,7 +3,7 @@ class PlatformsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @platforms = Platform.all
+    @platforms = Platform.order(:manufacturer)
   end
 
   def show
