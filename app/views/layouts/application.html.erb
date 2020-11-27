@@ -67,6 +67,7 @@
 
   <%= yield %>
 
+  <% if user_signed_in? %>
   <div class="surface-add-item">
     <div class="add-item-button">
       <%= link_to new_game_path do %>
@@ -77,6 +78,7 @@
       <% end %>
     </div>
   </div>
+  <% end %>
 
 </body>
 
