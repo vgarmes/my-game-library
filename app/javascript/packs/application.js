@@ -17,7 +17,7 @@ require('jquery')
 // const imagePath = (name) => images(name, true)
 
 // Burger navigation menu
-$(document).ready(function() {
+$(document).on('turbolinks:load', function() {
 
   // Check for click events on the navbar burger icon
   $(".navbar-burger").click(function() {
@@ -30,7 +30,7 @@ $(document).ready(function() {
 });
 
 // Star rating widget
-$(document).ready(function () {
+$(document).on('turbolinks:load', function () {
 
   setInitialStars();
 
