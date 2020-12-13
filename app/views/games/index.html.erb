@@ -1,11 +1,23 @@
 <section class="section">
   <h3 class="title is-3 has-text-centered">
-    <i class="fa fa-clock-o"></i> Recently completed
+    Recently completed
   </h3>
 
   <div class="game-list">
     <ul>
-      <%= render @games %>
+      <%= render @games.where("completed": true).order(completed_date: :desc).limit(20) %>
     </ul>
   </div>
+  <br class="clear">
+
+  <h3 class="title is-3 has-text-centered">
+    Last additions
+  </h3>
+
+  <div class="game-list">
+    <ul>
+      <%= render @games.where("completed": false).order(buy_date: :desc).limit(20) %>
+    </ul>
+  </div>
+  <br class="clear">
 </section>
