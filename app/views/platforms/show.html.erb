@@ -1,6 +1,6 @@
 <section class="section">
   <div class="title-icon">
-    <% if File.exist?("monochrome/#{@platform.manufacturer} - #{@platform.name}.png") %>
+    <% if asset_exist?("monochrome/#{@platform.manufacturer} - #{@platform.name}.png") %>
     <%= image_tag "monochrome/#{@platform.manufacturer} - #{@platform.name}.png" %>
     <% end %>
   </div>
