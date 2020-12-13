@@ -1,4 +1,9 @@
 <section class="section">
+  <div class="title-icon">
+    <% if File.exist?("monochrome/#{@platform.manufacturer} - #{@platform.name}.png") %>
+    <%= image_tag "monochrome/#{@platform.manufacturer} - #{@platform.name}.png" %>
+    <% end %>
+  </div>
   <h3 class="title is-3 has-text-centered">
     <%= @platform.name %>
   </h3>

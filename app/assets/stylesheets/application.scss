@@ -106,3 +106,12 @@
   0% {transform: rotate(-90deg);}
   100% {transform: rotate(0);}
 }
+
+// title icons
+.title-icon img {
+  display: block;
+  margin: auto;
+  max-width: 100px;
+  max-height: 100px;
+  -webkit-filter: invert(80%);
+}
