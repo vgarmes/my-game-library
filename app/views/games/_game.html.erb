@@ -1,8 +1,12 @@
 <li id="item">
-  <div class="cover">
+  <div class="cover <%= 'monochrome' unless game.thumbnail.attached? %>">
     <span class="item-cover"></span>
     <% if game.thumbnail.attached? %>
       <%= link_to image_tag(game.thumbnail), game %>
+    <% else %>
+      <% if asset_exist?("monochrome/#{game.platform.manufacturer} - #{game.platform.name}-content.png") %>
+        <%= image_tag "monochrome/#{game.platform.manufacturer} - #{game.platform.name}-content.png" %>
+      <% end %>
     <% end %>
   </div>
   <span class="item-title"><%= link_to game.title, game %></span>
