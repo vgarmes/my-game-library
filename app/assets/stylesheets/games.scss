@@ -29,7 +29,7 @@
   width: 20%;
   //width: 175px
   //height: 210px;
-  height: 230px;
+  height: 250px;
   float: left;
   text-align: center;
   //margin: 0 4px 4px 0;
@@ -105,3 +105,17 @@ li:hover .cover img {
   max-height: 160px;
   vertical-align: middle;
 }
+
+.icons {
+  display: inline-block;
+}
+
+.icons img {
+  max-width: 20px;
+  max-height: 20px;
+}
+
+.icons .in-collection {
+  -webkit-filter: invert(80%);
+}
+

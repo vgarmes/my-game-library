@@ -9,10 +9,20 @@
       <% end %>
     <% end %>
   </div>
+
   <span class="item-title"><%= link_to game.title, game %></span>
+  
   <div class="icons">
+
     <div class="rating">
       <%= render partial: "games/rating_static", locals: {rating: game.rating.to_i} %>
     </div>
+
+    <div class="in-collection">
+      <% if (game.in_collection)&&(asset_exist?("monochrome/#{game.platform.manufacturer} - #{game.platform.name}-content.png")) %>
+        <%= image_tag("monochrome/#{game.platform.manufacturer} - #{game.platform.name}-content.png") %>
+      <% end %>
+    </div>
+
   </div>
 </li>
