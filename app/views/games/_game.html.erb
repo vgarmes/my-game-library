@@ -5,7 +5,7 @@
       <%= link_to image_tag(game.thumbnail), game %>
     <% else %>
       <% if asset_exist?("monochrome/#{game.platform.manufacturer} - #{game.platform.name}-content.png") %>
-        <%= image_tag "monochrome/#{game.platform.manufacturer} - #{game.platform.name}-content.png" %>
+        <%= link_to image_tag("monochrome/#{game.platform.manufacturer} - #{game.platform.name}-content.png"), game %>
       <% end %>
     <% end %>
   </div>
