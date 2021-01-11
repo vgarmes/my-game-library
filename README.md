@@ -1,24 +1,20 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is my personal web app for keeping track of my videogame collection as well as logging the videogames I am completing.
 
-Things you may want to cover:
+The web app is deployed to production in the following link:
+https://juegos-victor.herokuapp.com/
 
-* Ruby version
+Guest users have only limited view access.
 
-* System dependencies
+The app has the following features
 
-* Configuration
+* User authentication with Devise
 
-* Database creation
+* PostgreSQL as database engine
 
-* Database initialization
+* Bulma CSS framework
 
-* How to run the test suite
+* Cloud image storage with Active Storage and Cloudinary
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* UI/UX features in Javascript like an interactive star rating widget and a floating button to add new videogames
