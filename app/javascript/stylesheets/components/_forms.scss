@@ -1,0 +1,14 @@
+@import "dropzone/dist/min/dropzone.min.css";
+@import "dropzone/dist/min/basic.min.css";
+
+
+.dropzone {
+  border-radius: 5px;
+
+  &.dz-drag-hover {
+
+    .dz-message {
+      opacity: 0.9;
+    }
+  }
+}
