@@ -7,14 +7,13 @@
 
     <div class="field">
       <div class="control">
-        <%= f.label :title, class: "label" %>
-        <%= f.text_field :title, autofocus: true, class: "input" %>
+        <%= f.input :title, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
       </div>
     </div>
 
     <div class="field">
       <div class="control">
-        <%= f.label :platform_id, class: "label" %>
+        <label class="label">Platform</label>
         <div class="control has-icons-left">
           <span class="select">
             <%= f.input_field :platform_id, collection: @platforms, prompt: "Select platform" %>
@@ -118,14 +117,13 @@
       </div>
 
       <div class="dropzone dropzone-default dz-clickable" data-controller="dropzone" data-dropzone-max-file-size="2" data-dropzone-max-files="1">
-        <%= f.file_field :thumbnail, direct_upload: true, data: { target: 'dropzone.input' } %>
+        <%= f.file_field :thumbnail, class: 'form-control', direct_upload: true, data: { target: 'dropzone.input' } %>
         <div class="dropzone-msg dz-message needsclick text-gray-600">
           <h3 class="dropzone-msg-title">Drag here to upload or click here to browse</h3>
           <span class="dropzone-msg-desc text-sm">2 MB file size maximum. Allowed file types png, jpg.</span>
         </div>
       </div>
     </div>
-    
   </div>
 
 </div>

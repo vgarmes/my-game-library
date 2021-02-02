@@ -10,7 +10,7 @@ require("channels")
 require('jquery')
 
 // Stimulus js:
-import "controllers"
+import 'controllers'
 
 // Tailwind CSS:
 import "stylesheets/application"
