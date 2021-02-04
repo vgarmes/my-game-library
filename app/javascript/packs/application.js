@@ -63,11 +63,11 @@ $(document).on('turbolinks:load', function () {
     var onStar = parseInt($(this).data('value'), 10); // The star currently selected
     var stars = $(this).parent().children('li.star');
 
-    for (i = 0; i < stars.length; i++) {
+    for (let i = 0; i < stars.length; i++) {
       $(stars[i]).removeClass('selected');
     }
 
-    for (i = 0; i < onStar; i++) {
+    for (let i = 0; i < onStar; i++) {
       $(stars[i]).addClass('selected');
     }
 
@@ -88,11 +88,11 @@ function setInitialStars() {
 
     var stars = $(selectedStar).parent().children('li.star');
 
-    for (i = 0; i < stars.length; i++) {
+    for (let i = 0; i < stars.length; i++) {
       $(stars[i]).removeClass('selected');
     }
 
-    for (i = 0; i < onStar; i++) {
+    for (let i = 0; i < onStar; i++) {
       $(stars[i]).addClass('selected');
     }
   }
