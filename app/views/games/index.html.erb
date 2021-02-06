@@ -5,7 +5,7 @@
 
   <div class="game-list">
     <ul>
-      <%= render @games.where("completed": true).order(completed_date: :desc).limit(20) %>
+      <%= render @games_completed %>
     </ul>
      <br class="clear">
   </div>
@@ -17,7 +17,7 @@
 
   <div class="game-list">
     <ul>
-      <%= render @games.where("completed": false).order(buy_date: :desc).limit(20) %>
+      <%= render @games_recent %>
     </ul>
     <br class="clear">
   </div>
