@@ -19,7 +19,7 @@
             <%= f.input_field :platform_id, collection: @platforms, prompt: "Select platform" %>
           </span>
           <span class="icon is-small is-left">
-            <i class="fa fa-gamepad"></i>
+            <i class="fas fa-gamepad"></i>
           </span>
         </div>
       </div>
@@ -81,7 +81,7 @@
         </div>
       </div>
     </div>
-    
+
     <div class="columns">
       <div class="column">
         <div class="field">
@@ -128,8 +128,9 @@
 
 </div>
 
-<hr />
+<div class="buttons">
+  <%= f.button :submit, class:"button is-success" %>
+</div>
 
-<%= f.button :submit, class:"button is-dark" %>
 
 <% end %>

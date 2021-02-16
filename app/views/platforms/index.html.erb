@@ -9,7 +9,7 @@
             <%= link_to "#{p.manufacturer} - #{p.name} (#{p.games.count})", platform_path(p) %>
             <% if user_signed_in? %>
               <%= link_to 'Edit', edit_platform_path(p), class:"button is-small is-rounded" %>
-              <%= link_to 'Delete', p, method: :delete, data: { confirm: "Are you sure? "}, class:"button is-small is-rounded" %>
+              <%= link_to 'Delete', p, method: :delete, data: { confirm: "Are you sure? "}, class:"button is-small is-rounded is-danger" %>
             <% end %>
           </li>
           <% end %>

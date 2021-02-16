@@ -1,10 +1,24 @@
 <section class="section">
   <div class="container">
-    <h1 class="title is-3">Editing Game</h1>       
+    <h1 class="title is-3">Editing Game</h1>
+
     <%= render 'form', game: @game %>
+    
+    <hr />
+
+    <div class="buttons">
+      <%= link_to 'Show', @game, class:"button is-info" %>
+      <%= link_to 'Back', games_path, class: "button is-info" %>
+      <%= link_to @game, method: :delete, data: { confirm: "Are you sure? "} do %>
+      <button class="button is-danger is-outlined">
+        <span>Delete</span>
+        <span class="icon is-small">
+          <i class="fas fa-times"></i>
+        </span>
+      </button>
+      <% end %>
+    </div>
+
+
   </div>
 </section>
-
-<%= link_to 'Show', @game %> |
-<%= link_to 'Back', games_path %>
-<%= link_to 'Delete', @game, method: :delete, data: { confirm: "Are you sure? "}, class:"button is-small is-rounded" %>

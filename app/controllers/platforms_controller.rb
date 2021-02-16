@@ -8,7 +8,7 @@ class PlatformsController < ApplicationController
 
   def show
     @platform = Platform.find(params[:id])
-    @games = Game.where(platform_id: params[:id])
+    @games = Game.where(platform_id: params[:id]).order(title: :asc)
   end
 
   def new

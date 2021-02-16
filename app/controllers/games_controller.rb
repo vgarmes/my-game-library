@@ -5,7 +5,7 @@ class GamesController < ApplicationController
   # GET /games.json
   def index
     @games_completed = Game.where("completed": true).order(completed_date: :desc).limit(20)
-    @games_recent = Game.where("completed": false).order(buy_date: :desc).limit(20)
+    @games_recent = Game.where("completed": false).order(created_at: :desc).limit(20)
   end
 
   # GET /games/1
