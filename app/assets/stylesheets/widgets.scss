@@ -13,17 +13,17 @@
 }
 
 /* Idle State of the stars */
-.rating-stars ul > li.star > i.fa {
+.rating-stars ul > li.star > i.fas {
   font-size:1em; /* Change the size of the stars */
   color:#ccc; /* Color on idle state */
 }
 
 /* Hover state of the stars */
-.rating-stars ul > li.star.hover > i.fa {
+.rating-stars ul > li.star.hover > i.fas {
   color:#FFCC36;
 }
 
 /* Selected state of the stars */
-.rating-stars ul > li.star.selected > i.fa {
+.rating-stars ul > li.star.selected > i.fas {
   color:#FF912C;
 }
