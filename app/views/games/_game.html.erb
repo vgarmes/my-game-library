@@ -18,17 +18,27 @@
 
   <div class="status-icons">
     <% if game.completed %>
-    <i class="fas fa-check"></i>
+    <div class="icon">
+      <i class="fas fa-check"></i>
+      <span class="tooltip">Completed</span>
+    </div>
     <% end %>
 
     <% if (game.in_collection)&&(asset_exist?("monochrome/#{game.platform.manufacturer} - #{game.platform.name}-content.png")) %>
-    <span class="icon-monochrome">
+    <div class="icon">
+      <span class="icon-monochrome">
       <%= image_tag("monochrome/#{game.platform.manufacturer} - #{game.platform.name}-content.png") %>
-    </span>
+      </span>
+      <span class="tooltip">In collection</span>
+    </div>
     <% end %>
 
     <% unless game.edition.empty? %>
-    <i class="fas fa-dice-d6"></i>
+    <div class="icon">
+      <i class="fas fa-cubes"></i>
+      <span class="tooltip"><%= game.edition %></span>
+    </div>
     <% end %>
+
   </div>
 </li>
