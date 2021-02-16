@@ -1,28 +1,34 @@
-<li id="item">
+<li class="item">
   <div class="cover <%= 'monochrome' unless game.thumbnail.attached? %>">
     <span class="item-cover"></span>
     <% if game.thumbnail.attached? %>
-      <%= link_to image_tag(game.thumbnail), game %>
+    <%= link_to image_tag(game.thumbnail), game %>
     <% else %>
-      <% if asset_exist?("monochrome/#{game.platform.manufacturer} - #{game.platform.name}-content.png") %>
-        <%= link_to image_tag("monochrome/#{game.platform.manufacturer} - #{game.platform.name}-content.png"), game %>
-      <% end %>
+    <% if asset_exist?("monochrome/#{game.platform.manufacturer} - #{game.platform.name}-content.png") %>
+    <%= link_to image_tag("monochrome/#{game.platform.manufacturer} - #{game.platform.name}-content.png"), game %>
+    <% end %>
     <% end %>
   </div>
 
   <span class="item-title"><%= link_to game.title, game %></span>
-  
-  <div class="icons">
 
-    <div class="rating">
-      <%= render partial: "games/rating_static", locals: {rating: game.rating.to_i} %>
-    </div>
+  <div class="rating">
+    <%= render partial: "games/rating_static", locals: {rating: game.rating.to_i} %>
+  </div>
 
-    <div class="in-collection">
-      <% if (game.in_collection)&&(asset_exist?("monochrome/#{game.platform.manufacturer} - #{game.platform.name}-content.png")) %>
-        <%= image_tag("monochrome/#{game.platform.manufacturer} - #{game.platform.name}-content.png") %>
-      <% end %>
-    </div>
+  <div class="status-icons">
+    <% if game.completed %>
+    <i class="fas fa-check"></i>
+    <% end %>
 
+    <% if (game.in_collection)&&(asset_exist?("monochrome/#{game.platform.manufacturer} - #{game.platform.name}-content.png")) %>
+    <span class="icon-monochrome">
+      <%= image_tag("monochrome/#{game.platform.manufacturer} - #{game.platform.name}-content.png") %>
+    </span>
+    <% end %>
+
+    <% unless game.edition.empty? %>
+    <i class="fas fa-dice-d6"></i>
+    <% end %>
   </div>
 </li>

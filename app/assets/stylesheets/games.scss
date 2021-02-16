@@ -24,7 +24,7 @@
   color: inherit;
 }
 
-.game-list #item {
+.game-list .item {
   position: relative;
   width: 20%;
   //width: 175px
@@ -106,16 +106,20 @@ li:hover .cover img {
   vertical-align: middle;
 }
 
-.icons {
-  display: inline-block;
+.status-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.icons img {
+.status-icons img {
   max-width: 20px;
   max-height: 20px;
 }
 
-.icons .in-collection {
-  -webkit-filter: invert(80%);
+.status-icons .icon-monochrome {
+  display: flex;
+  align-items:center;
+  -webkit-filter: invert(75%);
 }
 
