@@ -48,7 +48,7 @@
 
         <%= form_tag(search_games_path, :method => "get", class: 'navbar-item field has-addons') do %>
         <div class="control">
-          <%= search_field_tag :search, params[:search], placeholder: "Search game", class: "input" %>
+          <%= search_field_tag :q, params[:q], placeholder: "Search game", class: "input" %>
         </div>
         <div class="control">
           <%= button_tag 'Search', class: 'button is-info', name: nil %>

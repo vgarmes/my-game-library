@@ -9,10 +9,10 @@ class GamesController < ApplicationController
   end
 
   def search
-    if params[:search].blank?
+    if params[:q].blank?
       redirect_to(root_path) and return
     else
-      parameter = params[:search].downcase
+      parameter = params[:q].downcase
       @results = Game.all.where("lower(title) LIKE :query", query: "%#{parameter}%")
     end
   end
