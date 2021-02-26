@@ -8,6 +8,15 @@ class GamesController < ApplicationController
     @games_recent = Game.where("completed": false).order(created_at: :desc).limit(20)
   end
 
+  def search
+    if params[:search].blank?
+      redirect_to(root_path) and return
+    else
+      parameter = params[:search].downcase
+      @results = Game.all.where("lower(title) LIKE :query", query: "%#{parameter}%")
+    end
+  end
+
   # GET /games/1
   # GET /games/1.json
   def show
