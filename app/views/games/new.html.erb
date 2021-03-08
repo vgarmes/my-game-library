@@ -3,6 +3,8 @@
     <h1 class="title is-3">New Game</h1>
     <%= render 'form', game: @game %>
   </div>
+
+  <br>
+  <%= link_to 'Back', games_path, class: "button is-info" %>
 </section>
 
-<%= link_to 'Back', games_path %>

@@ -7,20 +7,16 @@
 
     <div class="field">
       <div class="control">
-        <%= f.input :title, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+        <%= f.label :title, "Title", class: "label" %>
+        <%= f.input :title, autofocus: true, input_html: { class: "input"}, wrapper: false, required: true, label: false %>
       </div>
     </div>
 
     <div class="field">
+    <label class="label"><%= f.label :platform_id %></label>
       <div class="control">
-        <label class="label">Platform</label>
-        <div class="control has-icons-left">
-          <span class="select">
-            <%= f.input_field :platform_id, collection: @platforms, prompt: "Select platform" %>
-          </span>
-          <span class="icon is-small is-left">
-            <i class="fas fa-gamepad"></i>
-          </span>
+        <div class="select">
+            <%= f.input_field :platform_id, collection: @platforms, prompt: "Select platform", required: true, label_html: {class: "label" } %>
         </div>
       </div>
     </div>
@@ -31,15 +27,19 @@
       </div>
     </div>
 
-    <div class="field pb-3">
-      <div class="control">
-        <%= f.label :release_date %><br />
-        <%= f.date_select :release_date, order: [:day, :month, :year] %>
+    <div class="columns pb-3">
+      <div class="column is-half">
+        <div class="field">
+          <div class="control">
+            <%= f.label :release_date %><br />
+            <%= f.date_field :release_date, include_blank: true, class: 'input' %>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="columns pb-3">
-      <div class="column">
+      <div class="column is-half">
         <div class="field">
           <div class="control">
             <%= f.radio_button :in_collection, true %>
@@ -50,18 +50,18 @@
         </div>
       </div>
 
-      <div class="column">
+      <div class="column is-half">
         <div class="field">
           <div class="control">
             <%= f.label :buy_date %><br />
-            <%= f.date_select :buy_date, order: [:day, :month, :year] %>
+            <%= f.date_field :buy_date, include_blank: true, class: 'input' %>
           </div>
         </div>
       </div>
     </div>
 
     <div class="columns pb-3">
-      <div class="column">
+      <div class="column is-half">
         <div class="field">
           <div class="control">
             <label for="game[completed]">
@@ -72,11 +72,11 @@
         </div>
       </div>
 
-      <div class="column">
+      <div class="column is-half">
         <div class="field">
           <div class="control">
             <%= f.label :completed_date %><br />
-            <%= f.date_select :completed_date, order: [:day, :month, :year] %>
+            <%= f.date_field :completed_date, include_blank: true, class: 'input' %>
           </div>
         </div>
       </div>
@@ -133,4 +133,3 @@
 </div>
 
 <% end %>
-

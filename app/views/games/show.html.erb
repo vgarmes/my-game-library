@@ -20,14 +20,12 @@
           <%= @game.in_collection ? "Physical" : "Digital" %>
         </p>
 
-        <p>
-          Completed:
-          <%="#{@game.completed_date.strftime("%d-%m-%Y")} (#{distance_of_time_in_words(Date.today, @game.completed_date)} ago)"%>
-        </p>
-
+        <% if (@game.completed) && (not @game.completed_date.nil?) %>
+        <p>Completed:
+        <%="#{@game.completed_date.strftime("%d-%m-%Y")} (#{distance_of_time_in_words(Date.today, @game.completed_date)} ago)"%>
+        </p> 
+        <% end %>
         
-
-
       </div>
 
       <% if user_signed_in? %>
